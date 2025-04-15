@@ -27,6 +27,35 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-        
+        private void EqualButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (double.TryParse(ResultTextBox.Text, out double secondOperand))
+            {
+                switch (_operator)
+                {
+                    case "+":
+                        _result += secondOperand;
+                        break;
+                    case "-":
+                        _result -= secondOperand;
+                        break;
+                    case "*":
+                        _result *= secondOperand;
+                        break;
+                    case "/":
+                        if (secondOperand != 0)
+                        {
+                            _result /= secondOperand;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Деление на ноль невозможно!");
+                            return;
+                        }
+                        break;
+                }
+                ResultTextBox.Text = _result.ToString();
+            }
+        }
     }
 }
