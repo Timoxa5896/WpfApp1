@@ -47,5 +47,14 @@ namespace WpfApp1
                 ResultTextBox.Text += button.Content.ToString();
             }
         }
+        private void OperatorButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (double.TryParse(ResultTextBox.Text, out _result))
+            {
+                Button button = sender as Button;
+                _operator = button.Content.ToString();
+                _isOperatorClicked = true;
+            }
+        }
     }
 }
