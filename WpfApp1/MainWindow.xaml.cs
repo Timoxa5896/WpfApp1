@@ -27,6 +27,25 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-        
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            ResultTextBox.Text = string.Empty;
+            _result = 0;
+            _operator = string.Empty;
+            _isOperatorClicked = false;
+        }
+        private void NumberButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            if (_isOperatorClicked)
+            {
+                ResultTextBox.Text = button.Content.ToString();
+                _isOperatorClicked = false;
+            }
+            else
+            {
+                ResultTextBox.Text += button.Content.ToString();
+            }
+        }
     }
 }
