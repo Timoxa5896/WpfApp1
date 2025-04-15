@@ -20,12 +20,19 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private double _result;
+        private string _operator;
+        private bool _isOperatorClicked;
         public MainWindow()
         {
             InitializeComponent();
         }
-
-        Point poin;
- 
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            ResultTextBox.Text = string.Empty;
+            _result = 0;
+            _operator = string.Empty;
+            _isOperatorClicked = false;
+        }
     }
 }
