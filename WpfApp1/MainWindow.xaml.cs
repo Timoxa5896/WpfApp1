@@ -27,12 +27,7 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-        private void ClearButton_Click(object sender, RoutedEventArgs e)
-        {
-            ResultTextBox.Text = string.Empty;
-            _result = 0;
-            _operator = string.Empty;
-            _isOperatorClicked = false;
-        }
+
+ 
     }
 }
